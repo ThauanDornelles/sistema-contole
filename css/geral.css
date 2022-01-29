@@ -1,0 +1,39 @@
+body {
+  background-color: rgb(253, 251, 251) !important;
+}
+
+.titulo-pagina {
+  margin-top: 10vh;
+}
+
+.tela-cadastro {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  background: #ffffff;
+  box-shadow: 5px 5px 10px #999999, -5px -5px 10px #ffffff;
+  border-radius: 10px;
+  padding: 25px;
+  border: solid 1px lightgray;
+}
+
+.botao-salvar {
+  width: 120px;
+}
+
+.historico-cards-container {
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 5px 5px 10px #999999, -5px -5px 10px #ffffff;
+  border-radius: 10px;
+  border: solid 1px lightgray;
+  margin-bottom: 5vh;
+}
+
+.card-item {
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 5px 5px 10px #999999, -5px -5px 10px #ffffff;
+  border-radius: 10px;
+  margin: 20px;
+  border: solid 1px lightgray;
+}
