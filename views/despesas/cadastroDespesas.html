@@ -14,10 +14,10 @@
 
 <body>
   <div id="navbar"></div>
-  <h1 class="text-center titulo-pagina">Cadastro Controle de Despesas</h1>
+  <h1 class="text-center titulo-pagina">Cadastro de Despesas</h1>
   <div class="container tela-cadastro">
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-4">
         <div class="form-group mb-3">
           <label for="data" class="form-label">
             Data:
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-4">
         <div class="form-group mb-3">
           <label for="despesas" class="form-label">
             Despesa:
@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-4">
         <div class="form-group mb-3">
           <label for="quantidade" class="form-label">
             Quantidade:
@@ -44,21 +44,12 @@
         </div>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-4">
         <div class="form-group mb-3">
           <label for="tipo" class="form-label">
             Tipo:
           </label>
           <input type="text" class="form-control" id="tipo" placeholder="Concentrado" />
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <div class="form-group mb-3">
-          <label for="fase" class="form-label">
-            Fase:
-          </label>
-          <input type="text" class="form-control" id="fase" placeholder="Engorda" />
         </div>
       </div>
 
@@ -80,21 +71,31 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label for="observacao">Observação:</label>
-            <textarea class="form-control" id="observacao" rows="2"></textarea>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-3">
-        <div class="d-flex flex-row-reverse">
-          <button class="btn btn-primary botao-salvar">Salvar</button>
+      <div class="col-md-4">
+        <div class="form-group mb-3">
+          <label for="fase" class="form-label">
+            Fase:
+          </label>
+          <input type="text" class="form-control" id="fase" placeholder="Engorda" />
         </div>
       </div>
     </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="observacao">Observação:</label>
+          <textarea class="form-control" id="observacao" rows="2"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="d-flex flex-row-reverse">
+        <button class="btn btn-primary botao-salvar">Salvar</button>
+      </div>
+    </div>
+  </div>
 
     <div class="container historico-cards-container">
       <h3 class="p-3 text-center">Últimos itens cadastrados:</h2>
@@ -193,7 +194,7 @@
           </div>
         </div>
     </div>
-  </div>
+  
 
   <script type="text/javascript" src="../../plugins/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
