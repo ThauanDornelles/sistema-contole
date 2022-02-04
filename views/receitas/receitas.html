@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Controle de receita</title>
+    <link rel="stylesheet" href="../../css/geral.css" />
+    <link rel="stylesheet" href="../../css/cadastroReceitas/consulta.css" />
     <link rel="stylesheet" href="../../css/style.css" />
     <script
       src="https://kit.fontawesome.com/4bed44fa76.js"
@@ -15,9 +17,31 @@
       href="../../plugins/bootstrap-5.1.3-dist/css/bootstrap.min.css"
     />
   </head>
+
   <body>
     <div id="navbar"></div>
-    <div class="container main-content"></div>
+    <h1 class ="text-center titulo-pagina">Consulta de Receitas</h1>
+    <div class="container tela-cadastro">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <div class="form-group mb-3">
+          <label for="receitas" class="form-label">
+            Consultar receita:
+          </label>
+          <input required="required" type="text" class="form-control" id="receitas" placeholder="Bezerros..." />
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="d-flex flex-row-reverse">
+          <button onclick="control.buscar()" class="btn btn-primary botao-salvar">Salvar</button>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
 
     <script
       type="text/javascript"
@@ -30,5 +54,6 @@
     <script type="text/javascript" src="../../js/index.js"></script>
     <script type="text/javascript" src="../../js/navbar.js"></script>
     <script type="text/javascript" src="../../js/rotas.js"></script>
+
   </body>
 </html>
