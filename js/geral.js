@@ -40,3 +40,31 @@ function conferirCamposNulos(campos) {
 function formataData(data) {
   return data < 10 ? '0' + data : data
 }
+
+function confereValorFiltro(parametro, isNumber = false, isMenor = false) {
+  let dadoRetorno = ''
+
+  if (parametro != '') {
+    dadoRetorno = !isNumber ? '==' : isMenor ? '<=' : '>='
+  } else {
+    dadoRetorno = !isNumber ? '!=' : '>='
+  }
+
+  return dadoRetorno
+}
+
+function confereValorNumero(valor, isDate = false) {
+  let dadoRetorno = 0
+
+  dadoRetorno = valor != '' ? (isDate ? Date.parse(valor) : valor) : 0
+
+  return dadoRetorno
+}
+
+function populaInputEditar(id) {
+  document.getElementById('inputEditar').value = id
+}
+
+function populaInputExcluir(id) {
+  document.getElementById('inputExcluir').value = id
+}

@@ -16,8 +16,27 @@ body {
   border: solid 1px lightgray;
 }
 
-.botao-salvar {
+.botao-salvar,
+.botao-pesquisar {
   width: 120px;
+}
+
+.icones-botao i {
+  font-size: 20px;
+}
+
+.botao-excluir i,
+.botao-excluir span {
+  color: red;
+}
+
+.botao-editar i,
+.botao-editar span {
+  color: rgb(20, 91, 172);
+}
+
+.botao-exportar {
+  margin-right: 10px;
 }
 
 .historico-cards-container {
