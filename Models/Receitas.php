@@ -1,7 +1,7 @@
 <?php
 class Receitas
 {
-    private $receitas;
+    private $receita;
     private $quantidade;
     private $peso;
     private $valorUnitario;
@@ -10,14 +10,14 @@ class Receitas
     private $data;
     private $observacao;
 
-    public function setReceitas($receitas)
+    public function setReceita($receita)
     {
-        $this->receitas = $receitas;
+        $this->receita = $receita;
     }
 
-    public function getReceitas()
+    public function getReceita()
     {
-        return $this->receitas;
+        return $this->receita;
     }
 
     public function setQuantidade($quantidade)
@@ -92,12 +92,10 @@ class Receitas
 
     public function consultar()
     {
-        include '../Database/Conexao.php';
-
         $conexao = new Conexao();
         $con = $conexao->getConnection();
-        mysqli_select_db($con, 'acaivintepila');
-        $sql = 'select * from cortes order by id desc limit 6';
+        mysqli_select_db($con, 'sistema_controle');
+        $sql = 'select * from receitas order by id desc';
         $result = mysqli_query($con, $sql);
 
         $resultado = [];
@@ -105,10 +103,35 @@ class Receitas
             array_push($resultado, $row);
         }
 
-        // $sql = $conexao->prepare(
-        //     'select * from receitas order by id desc limit 6'
-        // );
+        mysqli_close($con);
 
         return $resultado;
+    }
+
+    public function inserir()
+    {
+        $conexao = new Conexao();
+        $con = $conexao->getConnection();
+        mysqli_select_db($con, 'sistema_controle');
+        $sql =
+            "insert into receitas (receita, quantidade, peso, valorUnitario, valorTotal, data, observacao) values ('" .
+            $this->getReceita() .
+            "', " .
+            $this->getQuantidade() .
+            ', ' .
+            $this->getPeso() .
+            ', ' .
+            $this->getValorUnitario() .
+            ', ' .
+            $this->getValorTotal() .
+            ", '" .
+            $this->getData() .
+            "', '" .
+            $this->getObservacao() .
+            "')";
+
+        mysqli_query($con, $sql);
+
+        mysqli_close($con);
     }
 }

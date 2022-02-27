@@ -88,7 +88,7 @@ require_once '../../Models/Receitas.php';
 
     <div class="row mt-3">
       <div class="d-flex flex-row-reverse">
-        <button onclick="control.cadastrar()" class="btn btn-primary botao-salvar">Salvar</button>
+        <button onclick="cadastrar()" class="btn btn-primary botao-salvar">Salvar</button>
       </div>
     </div>
   </div>
