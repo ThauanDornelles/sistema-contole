@@ -1,6 +1,7 @@
 <?php
 class Receitas
 {
+    private $id;
     private $receita;
     private $quantidade;
     private $peso;
@@ -9,6 +10,16 @@ class Receitas
     private $valor;
     private $data;
     private $observacao;
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
 
     public function setReceita($receita)
     {
@@ -129,6 +140,18 @@ class Receitas
             "', '" .
             $this->getObservacao() .
             "')";
+
+        mysqli_query($con, $sql);
+
+        mysqli_close($con);
+    }
+
+    public function excluir()
+    {
+        $conexao = new Conexao();
+        $con = $conexao->getConnection();
+        mysqli_select_db($con, 'sistema_controle');
+        $sql = 'delete from receitas where id = ' . $this->getId();
 
         mysqli_query($con, $sql);
 

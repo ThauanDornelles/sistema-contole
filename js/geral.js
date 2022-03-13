@@ -68,3 +68,11 @@ function populaInputEditar(id) {
 function populaInputExcluir(id) {
   document.getElementById('inputExcluir').value = id
 }
+
+function abrirModal(idModal) {
+  $(`#${idModal}`).modal('show')
+}
+
+function fecharModal(idModal) {
+  $(`#${idModal}`).modal('hide')
+}

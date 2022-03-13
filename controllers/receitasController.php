@@ -9,7 +9,11 @@ switch ($funcao) {
         break;
 
     case 'inserir':
-        inserirReceitas();
+        inserirReceita();
+        break;
+
+    case 'excluir':
+        excluirReceita();
         break;
 }
 
@@ -25,7 +29,7 @@ function consultarReceitas()
     echo json_encode($valor);
 }
 
-function inserirReceitas()
+function inserirReceita()
 {
     $receitas = new Receitas();
     $receitas->setReceita($_POST['receita']);
@@ -39,6 +43,16 @@ function inserirReceitas()
     );
 
     $receitas->inserir();
+
+    echo json_encode('ok: "ok"');
+}
+
+function excluirReceita()
+{
+    $receitas = new Receitas();
+    $receitas->setId($_POST['id']);
+
+    $receitas->excluir();
 
     echo json_encode('ok: "ok"');
 }
