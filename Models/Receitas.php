@@ -101,12 +101,85 @@ class Receitas
         return $this->observacao;
     }
 
-    public function consultar()
+    public function consultarGeral($filtro)
     {
         $conexao = new Conexao();
         $con = $conexao->getConnection();
+
         mysqli_select_db($con, 'sistema_controle');
-        $sql = 'select * from receitas order by id desc';
+
+        $sql = 'select * from receitas where 1 = 1';
+
+        if ($filtro != '') {
+            if ($filtro['receita']) {
+                $sql .= " and receita like '%" . $filtro['receita'] . "%'";
+            }
+
+            if ($filtro['quantidadeInicial'] != '') {
+                $sql .= ' and quantidade >= ' . $filtro['quantidadeInicial'];
+            }
+
+            if ($filtro['quantidadeFinal'] != '') {
+                $sql .= ' and quantidade <= ' . $filtro['quantidadeFinal'];
+            }
+
+            if ($filtro['pesoInicial'] != '') {
+                $sql .= ' and peso >= ' . $filtro['pesoInicial'];
+            }
+
+            if ($filtro['pesoFinal'] != '') {
+                $sql .= ' and peso <= ' . $filtro['pesoFinal'];
+            }
+
+            if ($filtro['valorUnitarioInicial'] != '') {
+                $sql .=
+                    ' and valorUnitario >= ' . $filtro['valorUnitarioInicial'];
+            }
+
+            if ($filtro['valorUnitarioFinal'] != '') {
+                $sql .=
+                    ' and valorUnitario <= ' . $filtro['valorUnitarioFinal'];
+            }
+
+            if ($filtro['valorTotalInicial'] != '') {
+                $sql .= ' and valorTotal >= ' . $filtro['valorTotalInicial'];
+            }
+
+            if ($filtro['valorTotalFinal'] != '') {
+                $sql .= ' and valorTotal <= ' . $filtro['valorTotalFinal'];
+            }
+
+            if ($filtro['dataInicial'] != '') {
+                $sql .= " and data >= '" . $filtro['dataInicial'] . "'";
+            }
+
+            if ($filtro['dataFinal'] != '') {
+                $sql .= " and data <= '" . $filtro['dataFinal'] . "'";
+            }
+        }
+
+        $sql .= ' order by id desc';
+
+        $result = mysqli_query($con, $sql);
+
+        $resultado = [];
+        while ($row = $result->fetch_assoc()) {
+            array_push($resultado, $row);
+        }
+
+        mysqli_close($con);
+
+        return $resultado;
+    }
+
+    public function consultarReceita()
+    {
+        $conexao = new Conexao();
+        $con = $conexao->getConnection();
+
+        mysqli_select_db($con, 'sistema_controle');
+
+        $sql = 'select * from receitas where id = ' . $this->getId();
         $result = mysqli_query($con, $sql);
 
         $resultado = [];
@@ -123,7 +196,9 @@ class Receitas
     {
         $conexao = new Conexao();
         $con = $conexao->getConnection();
+
         mysqli_select_db($con, 'sistema_controle');
+
         $sql =
             "insert into receitas (receita, quantidade, peso, valorUnitario, valorTotal, data, observacao) values ('" .
             $this->getReceita() .
@@ -140,6 +215,36 @@ class Receitas
             "', '" .
             $this->getObservacao() .
             "')";
+
+        mysqli_query($con, $sql);
+
+        mysqli_close($con);
+    }
+
+    public function editar()
+    {
+        $conexao = new Conexao();
+        $con = $conexao->getConnection();
+        mysqli_select_db($con, 'sistema_controle');
+
+        $sql =
+            "update receitas set 
+                receita = '" .
+            $this->getReceita() .
+            "', quantidade = '" .
+            $this->getQuantidade() .
+            "', peso = '" .
+            $this->getPeso() .
+            "', valorUnitario = '" .
+            $this->getValorUnitario() .
+            "', valorTotal = '" .
+            $this->getValorTotal() .
+            "', data = '" .
+            $this->getData() .
+            "', observacao = '" .
+            $this->getObservacao() .
+            "' where id = " .
+            $this->getId();
 
         mysqli_query($con, $sql);
 

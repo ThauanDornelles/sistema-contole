@@ -122,8 +122,8 @@
 
     <div class="row mt-3">
       <div class="d-flex flex-row-reverse">
-        <button onclick="control.consultar()" class="btn btn-primary botao-pesquisar">Pesquisar</button>
-        <button onclick="control.Exportar()" class="btn btn-primary botao-pesquisar botao-exportar">Exportar</button>
+        <button onclick="pesquisar()" class="btn btn-primary botao-pesquisar">Pesquisar</button>
+        <button onclick="exportarXlsx()" class="btn btn-primary botao-pesquisar botao-exportar">Exportar</button>
       </div>
     </div>
   </div>

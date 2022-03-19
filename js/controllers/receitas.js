@@ -1,5 +1,5 @@
 window.onload = () => {
-  consultarReceitas()
+  consultarReceitasGeral()
 }
 
 async function excluirReceita() {
@@ -27,12 +27,12 @@ async function excluirReceita() {
     },
   })
 
-  consultarReceitas()
+  consultarReceitasGeral()
 }
 
 async function editarReceita() {
   let id = document.getElementById('inputEditar').value,
-    receita = document.getElementById('alterar-receitas').value,
+    receita = document.getElementById('alterar-receita').value,
     quantidade = document.getElementById('alterar-quantidade').value,
     peso = document.getElementById('alterar-peso').value,
     valorUnitario = document.getElementById('alterar-valorUnitario').value,
@@ -40,7 +40,7 @@ async function editarReceita() {
     data = document.getElementById('alterar-data').value,
     observacao = document.getElementById('alterar-observacao').value,
     conferirValores = [
-      'alterar-receitas',
+      'alterar-receita',
       'alterar-quantidade',
       'alterar-peso',
       'alterar-valorUnitario',
@@ -80,7 +80,7 @@ async function editarReceita() {
       },
     })
 
-    consultarReceitas()
+    consultarReceitasGeral()
   } else {
     mostraMensagem('Preencha todos os campos', 'ERROR')
   }
@@ -134,14 +134,16 @@ async function cadastrarReceita() {
       },
     })
 
-    consultarReceitas()
+    consultarReceitasGeral()
   } else {
     mostraMensagem('Preencha todos os campos antes de salvar', 'ERROR')
   }
 }
 
-async function consultarReceitas() {
-  let dados = { function: 'consultar' }
+async function consultarReceitasGeral(filtro = null) {
+  let dados = { function: 'consultarGeral', filtro: '' }
+
+  dados.filtro = filtro ? JSON.stringify(filtro) : ''
 
   $.ajax({
     url: 'http://localhost/sistema-contole/controllers/receitasController.php',
@@ -151,6 +153,24 @@ async function consultarReceitas() {
     cache: false,
     success: function (dados) {
       construirItens(dados)
+    },
+    error: function (e) {
+      console.log(e)
+    },
+  })
+}
+
+function consultarReceita(id) {
+  let dados = { function: 'consultar', id: id }
+
+  return $.ajax({
+    url: 'http://localhost/sistema-contole/controllers/receitasController.php',
+    type: 'post',
+    data: dados,
+    dataType: 'json',
+    cache: false,
+    success: function (data) {
+      return data
     },
     error: function (e) {
       console.log(e)
@@ -188,7 +208,7 @@ async function populaItem(item) {
         }</li>
         <li class="list-group-item">
           <div style="display: flex; justify-content: space-between;">
-              <button onclick="populaInputEditar('${
+              <button onclick="abrirModalEditar('${
                 item.id
               }')" type="button" class="btn icones-botao botao-editar" data-bs-toggle="modal" data-bs-target="#modalEditar">
                   <i class="fas fa-edit"></i> <span>Editar</span>
@@ -203,4 +223,52 @@ async function populaItem(item) {
       </ul>
     </div>
   </div>`)
+}
+
+async function abrirModalEditar(id) {
+  let dados = await consultarReceita(id)
+  dados = dados[0]
+
+  populaInputEditar(id)
+
+  document.getElementById('alterar-receita').value = dados.receita
+  document.getElementById('alterar-quantidade').value = dados.quantidade
+  document.getElementById('alterar-peso').value = dados.peso
+  document.getElementById('alterar-valorUnitario').value = dados.valorUnitario
+  document.getElementById('alterar-valorTotal').value = dados.valorTotal
+  document.getElementById('alterar-data').value = dados.data
+  document.getElementById('alterar-observacao').value = dados.observacao
+}
+
+function pesquisar() {
+  let receita = document.getElementById('receitas').value,
+    quantidadeInicial = document.getElementById('quantidadeInicial').value,
+    quantidadeFinal = document.getElementById('quantidadeFinal').value,
+    pesoInicial = document.getElementById('pesoInicial').value,
+    pesoFinal = document.getElementById('pesoFinal').value,
+    valorUnitarioInicial = document.getElementById('valorUnitarioInicial')
+      .value,
+    valorUnitarioFinal = document.getElementById('valorUnitarioFinal').value,
+    valorInicial = document.getElementById('valorInicial').value,
+    valorFinal = document.getElementById('valorFinal').value,
+    dataInicial = document.getElementById('dataInicial').value,
+    dataFinal = document.getElementById('dataFinal').value
+
+  let filtro = {
+    receita: receita,
+    quantidadeInicial: quantidadeInicial,
+    quantidadeFinal: quantidadeFinal,
+    pesoInicial: pesoInicial,
+    pesoFinal: pesoFinal,
+    valorUnitarioInicial: valorUnitarioInicial,
+    valorUnitarioFinal: valorUnitarioFinal,
+    valorTotalInicial: valorInicial,
+    valorTotalFinal: valorFinal,
+    dataInicial: dataInicial,
+    dataFinal: dataFinal,
+  }
+
+  consultarReceitasGeral(filtro)
+
+  mostraMensagem('Pesquisa concluída', 'SUCCESS')
 }
