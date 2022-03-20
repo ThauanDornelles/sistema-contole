@@ -96,3 +96,4 @@ function excluirReceita()
 
     echo json_encode('ok: "ok"');
 }
+

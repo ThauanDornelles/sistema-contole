@@ -1,3 +1,7 @@
 function abrirLink(url) {
-  window.location.href = url + '.html'
+  window.location.href = url 
+
+
 }
+
+
