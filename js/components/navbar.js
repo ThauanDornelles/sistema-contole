@@ -11,30 +11,36 @@ let navbarContent = `<nav class="navbar navbar-light bg-light fixed-top">
                                 <div class="offcanvas-body">
                                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                         <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">Página Inicial</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="views/cadastroEspeciais/bois.php">Bois</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Vacas</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Novilhos</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="views/relatorios/relatorios.php">Relatórios</a>
+                                            <a class="nav-link active" aria-current="page" href="/sistema-contole/index.php">Página Inicial</a>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Dropdown
+                                            <a class="nav-link active dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Cadastros Especiais
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li class="dropdown-item">
+                                                    <a class="nav-link active" aria-current="page" href="/sistema-contole/views/cadastroEspeciais/bois.php">Bois</a>
+                                                </li>
                                                 <li><hr class="dropdown-divider"></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                <li class="dropdown-item">
+                                                    <a class="nav-link disabled" href="#">Vacas</a>
+                                                </li>
+                                                <li class="dropdown-item">
+                                                    <a class="nav-link disabled" href="#">Novilhos</a>
+                                                </li>
                                             </ul>
+                                        </li>                                        
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="/sistema-contole/views/receitas/receitas.php">Receitas</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="/sistema-contole/views/movimentacao/movimentacao.php">Movimentação Interna do Rebanho</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="/sistema-contole/views/despesas/despesas.php">Despesas</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/sistema-contole/views/relatorios/relatorios.php">Relatórios</a>
                                         </li>
                                     </ul>
                                 </div>

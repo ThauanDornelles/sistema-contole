@@ -49,7 +49,8 @@
 
   <div class="row">
     <div class="col-md-3">
-      <buttom onclick="abrirLink('views/pastagem/pastagem.php')">
+    <!-- abrirLink('views/pastagem/pastagem.php') -->
+      <buttom onclick="mostraMensagem('Em desenvolvimento', 'ERRO')">
         <div class="cards-navegacao">
           <h4 class="titulo-card text-center">
             Controles de Pastagens
@@ -60,7 +61,8 @@
 
 
   <div class="col-md-3">
-    <buttom onclick="abrirLink('views/mineralizacao/mineralizacao.php')">
+  <!-- abrirLink('views/mineralizacao/mineralizacao.php') -->
+  <buttom onclick="mostraMensagem('Em desenvolvimento', 'ERRO')">
       <div class="cards-navegacao">
         <h4 class="titulo-card text-center">
           Controles de Mineralização
@@ -70,7 +72,8 @@
   </div>
 
   <div class="col-md-3">
-    <buttom onclick="abrirLink('views/producao/producao.php')">
+    <!-- <buttom onclick="abrirLink('views/producao/producao.php')"> -->
+    <buttom onclick="mostraMensagem('Em desenvolvimento', 'ERRO')">
       <div class="cards-navegacao">
         <h4 class="titulo-card text-center">
           Controles de Produção
@@ -80,7 +83,8 @@
   </div>
 
   <div class="col-md-3">
-    <buttom onclick="abrirLink('views/ocorrencias/ocorrencias.php')">
+    <!-- <buttom onclick="abrirLink('views/ocorrencias/ocorrencias.php')"> -->
+    <buttom onclick="mostraMensagem('Em desenvolvimento', 'ERRO')">
       <div class="cards-navegacao">
         <h4 class="titulo-card text-center">
           Controles de Ocorrências
@@ -92,7 +96,8 @@
 
   <div class="row">
     <div class="col-md-3">
-      <buttom onclick="abrirLink('views/pesagens/pesagens.php')">
+      <!-- <buttom onclick="abrirLink('views/pesagens/pesagens.php')"> -->
+      <buttom onclick="mostraMensagem('Em desenvolvimento', 'ERRO')">
         <div class="cards-navegacao">
           <h4 class="titulo-card text-center">
             Controles de Pesagens
@@ -102,7 +107,8 @@
   </div>
 
   <div class="col-md-3">
-    <buttom onclick="abrirLink('views/reprodutivo/reprodutivo.php')">
+    <!-- <buttom onclick="abrirLink('views/reprodutivo/reprodutivo.php')"> -->
+    <buttom onclick="mostraMensagem('Em desenvolvimento', 'ERRO')">
       <div class="cards-navegacao">
         <h4 class="titulo-card text-center">
           Controles Reprodutivos
@@ -112,7 +118,8 @@
   </div>
 
   <div class="col-md-3">
-    <buttom onclick="abrirLink('views/nascimento/nascimento.php')">
+    <!-- <buttom onclick="abrirLink('views/nascimento/nascimento.php')"> -->
+    <buttom onclick="mostraMensagem('Em desenvolvimento', 'ERRO')">
       <div class="cards-navegacao">
         <h4 class="titulo-card text-center">
           Controles de Nascimentos
@@ -123,7 +130,8 @@
 
 
   <div class="col-md-3">
-    <buttom onclick="abrirLink('views/sanitario/sanitario.php')">
+    <!-- <buttom onclick="abrirLink('views/sanitario/sanitario.php')"> -->
+    <buttom onclick="mostraMensagem('Em desenvolvimento', 'ERRO')">
       <div class="cards-navegacao">
         <h4 class="titulo-card text-center">
           Controles Sanitários
@@ -138,6 +146,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/geral.js"></script>
   <script type="text/javascript" src="js/components/navbar.js"></script>
   <script type="text/javascript" src="js/rotas.js"></script>
 </body>

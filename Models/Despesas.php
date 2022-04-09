@@ -1,5 +1,5 @@
 <?php
-class Receitas
+class Despesas
 {
     private $id;
     private $receita;
@@ -21,14 +21,14 @@ class Receitas
         return $this->id;
     }
 
-    public function setReceita($receita)
+    public function setDespesa($despesa)
     {
-        $this->receita = $receita;
+        $this->despesa = $despesa;
     }
 
-    public function getReceita()
+    public function getDespesa()
     {
-        return $this->receita;
+        return $this->despesa;
     }
 
     public function setQuantidade($quantidade)
@@ -41,15 +41,26 @@ class Receitas
         return $this->quantidade;
     }
 
-    public function setPeso($peso)
+    public function setTipo($tipo)
     {
-        $this->peso = $peso;
+        $this->tipo = $tipo;
     }
 
-    public function getPeso()
+    public function getTipo()
     {
-        return $this->peso;
+        return $this->tipo;
     }
+    
+    public function setFase($fase)
+    {
+        $this->fase = $fase;
+    }
+
+    public function getFase()
+    {
+        return $this->fase;
+    }
+
 
     public function setValorUnitario($valorUnitario)
     {
@@ -108,11 +119,11 @@ class Receitas
 
         mysqli_select_db($con, 'sistema_controle');
 
-        $sql = 'select * from receitas where 1 = 1';
+        $sql = 'select * from despesas where 1 = 1';
 
         if ($filtro != '') {
-            if ($filtro['receita']) {
-                $sql .= " and receita like '%" . $filtro['receita'] . "%'";
+            if ($filtro['despesa']) {
+                $sql .= " and despesa like '%" . $filtro['despesa'] . "%'";
             }
 
             if ($filtro['quantidadeInicial'] != '') {
@@ -123,12 +134,9 @@ class Receitas
                 $sql .= ' and quantidade <= ' . $filtro['quantidadeFinal'];
             }
 
-            if ($filtro['pesoInicial'] != '') {
-                $sql .= ' and peso >= ' . $filtro['pesoInicial'];
-            }
-
-            if ($filtro['pesoFinal'] != '') {
-                $sql .= ' and peso <= ' . $filtro['pesoFinal'];
+            if ($filtro['tipo'] != '') {
+                $sql .=
+                    " and tipo like '%" . $filtro['tipo']. "%'";
             }
 
             if ($filtro['valorUnitarioInicial'] != '') {
@@ -147,6 +155,11 @@ class Receitas
 
             if ($filtro['valorTotalFinal'] != '') {
                 $sql .= ' and valorTotal <= ' . $filtro['valorTotalFinal'];
+            }
+
+            if ($filtro['fase'] != '') {
+                $sql .=
+                    " and fase like '%" . $filtro['fase']. "%'";
             }
 
             if ($filtro['dataInicial'] != '') {
@@ -172,14 +185,14 @@ class Receitas
         return $resultado;
     }
 
-    public function consultarReceita()
+    public function consultarDespesas()
     {
         $conexao = new Conexao();
         $con = $conexao->getConnection();
 
         mysqli_select_db($con, 'sistema_controle');
 
-        $sql = 'select * from receitas where id = ' . $this->getId();
+        $sql = 'select * from despesas where id = ' . $this->getId();
         $result = mysqli_query($con, $sql);
 
         $resultado = [];
@@ -200,17 +213,19 @@ class Receitas
         mysqli_select_db($con, 'sistema_controle');
 
         $sql =
-            "insert into receitas (receita, quantidade, peso, valorUnitario, valorTotal, data, observacao) values ('" .
-            $this->getReceita() .
+            "insert into despesas (despesa, quantidade, tipo, fase, valorUnitario, valorTotal, data, observacao) values ('" .
+            $this->getDespesa() .
             "', " .
             $this->getQuantidade() .
-            ', ' .
-            $this->getPeso() .
-            ', ' .
+            ", ' ".
+            $this->getTipo() .
+            "', '" .
+            $this->getFase() .
+            "', '".
             $this->getValorUnitario() .
-            ', ' .
+            "', '".
             $this->getValorTotal() .
-            ", '" .
+            "', '" .
             $this->getData() .
             "', '" .
             $this->getObservacao() .
@@ -228,13 +243,15 @@ class Receitas
         mysqli_select_db($con, 'sistema_controle');
 
         $sql =
-            "update receitas set 
-                receita = '" .
-            $this->getReceita() .
+            "update despesas set 
+                despesa = '" .
+            $this->getDespesa() .
             "', quantidade = '" .
             $this->getQuantidade() .
-            "', peso = '" .
-            $this->getPeso() .
+            "', tipo = '" .
+            $this->getTipo() .
+            "', fase = '" .
+            $this->getFase() .
             "', valorUnitario = '" .
             $this->getValorUnitario() .
             "', valorTotal = '" .
@@ -256,7 +273,7 @@ class Receitas
         $conexao = new Conexao();
         $con = $conexao->getConnection();
         mysqli_select_db($con, 'sistema_controle');
-        $sql = 'delete from receitas where id = ' . $this->getId();
+        $sql = 'delete from despesas where id = ' . $this->getId();
 
         mysqli_query($con, $sql);
 

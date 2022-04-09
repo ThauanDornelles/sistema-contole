@@ -19,12 +19,21 @@
   <h1 class="text-center titulo-pagina">Cadastro de Despesas</h1>
   <div class="container tela-cadastro">  
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-2">
         <div class="form-group mb-3">
           <label for="data" class="form-label">
-            Data:
+            Data Inicial:
           </label>
-          <input type="date" class="form-control" id="data" />
+          <input type="date" class="form-control" id="dataInicial" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="form-group mb-3">
+          <label for="data" class="form-label">
+            Data Final:
+          </label>
+          <input type="date" class="form-control" id="dataFinal" />
         </div>
       </div>
 
@@ -33,20 +42,29 @@
           <label for="despesas" class="form-label">
             Despesa:
           </label>
-          <input type="text" class="form-control" id="despesas" placeholder="ivermectina..." />
+          <input type="text" class="form-control" id="despesa" placeholder="ivermectina..." />
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-2">
         <div class="form-group mb-3">
           <label for="quantidade" class="form-label">
-            Quantidade:
+            Quantidade Inicial:
           </label>
-          <input type="number" class="form-control" id="quantidade" placeholder="2" />
+          <input type="number" class="form-control" id="quantidadeInicial" placeholder="2" />
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-2">
+        <div class="form-group mb-3">
+          <label for="quantidade" class="form-label">
+            Quantidade Final:
+          </label>
+          <input type="number" class="form-control" id="quantidadeFinal" placeholder="2" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
         <div class="form-group mb-3">
           <label for="tipo" class="form-label">
             Tipo: 
@@ -58,36 +76,45 @@
       <div class="col-md-2">
         <div class="form-group mb-3">
           <label for="valorUnitario" class="form-label">
-            Valor Unitário (R$):
+            Valor Un. Inicial:
           </label>
-          <input type="text" class="form-control" id="valorUnitario" placeholder="60.00" />
+          <input type="text" class="form-control" id="valorUnitarioInicial" placeholder="60.00" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="form-group mb-3">
+          <label for="valorUnitario" class="form-label">
+            Valor Un. Final:
+          </label>
+          <input type="text" class="form-control" id="valorUnitarioFinal" placeholder="60.00" />
         </div>
       </div>
 
       <div class="col-md-2">
         <div class="form-group mb-3">
           <label for="valor" class="form-label">
-            Valor Total(R$):
+            Valor Total Inicial:
           </label>
-          <input type="text" class="form-control" id="valor" placeholder="120.00" />
+          <input type="text" class="form-control" id="valorTotalInicial" placeholder="120.00" />
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-2">
+        <div class="form-group mb-3">
+          <label for="valor" class="form-label">
+            Valor Total Final:
+          </label>
+          <input type="text" class="form-control" id="valorTotalFinal" placeholder="120.00" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
         <div class="form-group mb-3">
           <label for="fase" class="form-label">
             Fase:
           </label>
           <input type="text" class="form-control" id="fase" placeholder="Engorda" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-md-12">
-        <div class="form-group">
-          <label for="observacao">Observação:</label>
-          <textarea class="form-control" id="observacao" rows="2"></textarea>
         </div>
       </div>
     </div>
@@ -129,7 +156,7 @@
                   <label for="data" class="form-label">
                     Data:
                   </label>
-                  <input type="date" class="form-control" id="data" />
+                  <input type="date" class="form-control" id="alterar-data" />
                 </div>
               </div>
 
@@ -138,7 +165,7 @@
                   <label for="despesas" class="form-label">
                     Despesa:
                   </label>
-                  <input type="text" class="form-control" id="despesas" placeholder="ivermectina..." />
+                  <input type="text" class="form-control" id="alterar-despesa" placeholder="ivermectina..." />
                 </div>
               </div>
 
@@ -147,7 +174,7 @@
                   <label for="quantidade" class="form-label">
                     Quantidade:
                   </label>
-                  <input type="number" class="form-control" id="quantidade" placeholder="2" />
+                  <input type="number" class="form-control" id="alterar-quantidade" placeholder="2" />
                 </div>
               </div>
 
@@ -156,7 +183,7 @@
                   <label for="tipo" class="form-label">
                     Tipo: 
                   </label>
-                  <input type="text" class="form-control" id="tipo" placeholder="Concentrado" />
+                  <input type="text" class="form-control" id="alterar-tipo" placeholder="Concentrado" />
                 </div>
               </div>
 
@@ -165,7 +192,7 @@
                   <label for="valorUnitario" class="form-label">
                     Valor Unitário (R$):
                   </label>
-                  <input type="text" class="form-control" id="valorUnitario" placeholder="60.00" />
+                  <input type="text" class="form-control" id="alterar-valor-unitario" placeholder="60.00" />
                 </div>
               </div>
 
@@ -174,7 +201,7 @@
                   <label for="valor" class="form-label">
                     Valor Total(R$):
                   </label>
-                  <input type="text" class="form-control" id="valor" placeholder="120.00" />
+                  <input type="text" class="form-control" id="alterar-valor-total" placeholder="120.00" />
                 </div>
               </div>
 
@@ -183,7 +210,7 @@
                   <label for="fase" class="form-label">
                     Fase:
                   </label>
-                  <input type="text" class="form-control" id="fase" placeholder="Engorda" />
+                  <input type="text" class="form-control" id="alterar-fase" placeholder="Engorda" />
                 </div>
               </div>
             </div>
@@ -192,7 +219,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="observacao">Observação:</label>
-                  <textarea class="form-control" id="observacao" rows="2"></textarea>
+                  <textarea class="form-control" id="alterar-observacao" rows="2"></textarea>
                 </div>
               </div>
             </div>
@@ -220,7 +247,7 @@
               <label for="data" class="form-label">
                 Data:
               </label>
-              <input type="date" class="form-control" id="data" />
+              <input type="date" class="form-control" id="inserir-data" />
             </div>
           </div>
 
@@ -229,7 +256,7 @@
               <label for="despesas" class="form-label">
                 Despesa:
               </label>
-              <input type="text" class="form-control" id="despesas" placeholder="ivermectina..." />
+              <input type="text" class="form-control" id="inserir-despesa" placeholder="ivermectina..." />
             </div>
           </div>
 
@@ -238,7 +265,7 @@
               <label for="quantidade" class="form-label">
                 Quantidade:
               </label>
-              <input type="number" class="form-control" id="quantidade" placeholder="2" />
+              <input type="number" class="form-control" id="inserir-quantidade" placeholder="2" />
             </div>
           </div>
           
@@ -247,7 +274,7 @@
               <label for="tipo" class="form-label">
                 Tipo: 
               </label>
-              <input type="text" class="form-control" id="tipo" placeholder="Concentrado" />
+              <input type="text" class="form-control" id="inserir-tipo" placeholder="Concentrado" />
             </div>
           </div>
 
@@ -256,7 +283,7 @@
               <label for="valorUnitario" class="form-label">
                 Valor Unitário (R$):
               </label>
-              <input type="text" class="form-control" id="valorUnitario" placeholder="60.00" />
+              <input type="text" class="form-control" id="inserir-valor-unitario" placeholder="60.00" />
             </div>
           </div>
 
@@ -265,7 +292,7 @@
               <label for="valor" class="form-label">
                 Valor Total(R$):
               </label>
-              <input type="text" class="form-control" id="valor" placeholder="120.00" />
+              <input type="text" class="form-control" id="inserir-valor-total" placeholder="120.00" />
             </div>
           </div>
 
@@ -274,7 +301,7 @@
               <label for="fase" class="form-label">
                 Fase:
               </label>
-              <input type="text" class="form-control" id="fase" placeholder="Engorda" />
+              <input type="text" class="form-control" id="inserir-fase" placeholder="Engorda" />
             </div>
           </div>
         </div>
@@ -283,7 +310,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <label for="observacao">Observação:</label>
-              <textarea class="form-control" id="observacao" rows="2"></textarea>
+              <textarea class="form-control" id="inserir-observacao" rows="2"></textarea>
             </div>
           </div>
         </div>
@@ -315,7 +342,7 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="../../js/controllers/despesass.js"></script>
+  <script type="text/javascript" src="../../js/controllers/despesas.js"></script>
   <script type="text/javascript" src="../../js/geral.js"></script>
   <script type="text/javascript" src="../../js/index.js"></script>
   <script type="text/javascript" src="../../js/components/navbar.js"></script>
