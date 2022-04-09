@@ -65,6 +65,12 @@ function populaInputEditar(id) {
   document.getElementById('inputEditar').value = id
 }
 
+function formataData(data) {
+  data = data.split('-')
+
+  return `${data[2]}/${data[1]}/${data[0]}`
+}
+
 function populaInputExcluir(id) {
   document.getElementById('inputExcluir').value = id
 }

@@ -194,7 +194,7 @@ async function populaItem(item) {
         ${item.receita}
       </h4>
       <ul class="list-group">
-        <li class="list-group-item data">Data: ${item.data}</li>
+        <li class="list-group-item data">Data: ${formataData(item.data)}</li>
         <li class="list-group-item quantidade">Quantidade: ${
           item.quantidade
         }</li>

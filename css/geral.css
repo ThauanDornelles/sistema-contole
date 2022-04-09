@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(253, 251, 251) !important;
+  background-color: #f5eded !important;
 }
 
 .titulo-pagina {
@@ -55,4 +55,10 @@ body {
   border-radius: 10px;
   margin: 20px;
   border: solid 1px lightgray;
+}
+
+#liveToast {
+  position: fixed;
+  bottom: 2%;
+  left: 2%;
 }

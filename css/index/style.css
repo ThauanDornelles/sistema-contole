@@ -1,9 +1,9 @@
 .main-content {
   margin-top: 15vh;
-  margin-bottom: 5vh;
 }
 
 .main-content .cards-navegacao {
+  border: solid 1px lightgray;
   width: 80% !important;
   padding: 20px;
   padding-bottom: 10px;
@@ -17,6 +17,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  cursor: pointer;
 }
 
 .descricao-card {

@@ -172,7 +172,7 @@ class Receitas
         return $resultado;
     }
 
-    public function consultarReceita()
+    public function consultarMovimentacao()
     {
         $conexao = new Conexao();
         $con = $conexao->getConnection();
