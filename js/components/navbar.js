@@ -19,14 +19,15 @@ let navbarContent = `<nav class="navbar navbar-light bg-light fixed-top">
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
                                                 <li class="dropdown-item">
-                                                    <a class="nav-link active" aria-current="page" href="/sistema-contole/views/cadastroEspeciais/bois.php">Bois</a>
+                                                    <a class="nav-link active" aria-current="page" href="/sistema-contole/views/cadastroEspeciais/terneiros.php">Terneiros</a>
                                                 </li>
                                                 <li><hr class="dropdown-divider"></li>
                                                 <li class="dropdown-item">
-                                                    <a class="nav-link disabled" href="#">Vacas</a>
+                                                    <a class="nav-link" href="/sistema-contole/views/cadastroEspeciais/vacas.php">Vacas</a>
                                                 </li>
+                                                <li><hr class="dropdown-divider"></li>                                                
                                                 <li class="dropdown-item">
-                                                    <a class="nav-link disabled" href="#">Novilhos</a>
+                                                    <a class="nav-link" href="/sistema-contole/views/cadastroEspeciais/novilhos.php">Novilhos</a>
                                                 </li>
                                             </ul>
                                         </li>                                        
