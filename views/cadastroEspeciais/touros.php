@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Controle de Novilhos</title>
+    <title>Controle de Touros</title>
     <link rel="stylesheet" href="../../css/geral.css" />
     <link rel="stylesheet" href="../../css/cadastroReceitas/style.css" />
     <script src="https://kit.fontawesome.com/4bed44fa76.js" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
 
 <body>
     <div id="navbar"></div>
-    <h1 class="text-center titulo-pagina">Cadastro de Novilhos</h1>
+    <h1 class="text-center titulo-pagina">Cadastro de Touros</h1>
     <div class="container tela-cadastro">
         <div class="row">
             <div class="col-md-4">
@@ -110,7 +110,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Editar Terneiro</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Touro</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -165,7 +165,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Cadastrar Terneiro</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Cadastrar Touro</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

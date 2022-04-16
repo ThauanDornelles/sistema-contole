@@ -23,11 +23,19 @@ let navbarContent = `<nav class="navbar navbar-light bg-light fixed-top">
                                                 </li>
                                                 <li><hr class="dropdown-divider"></li>
                                                 <li class="dropdown-item">
+                                                    <a class="nav-link active" aria-current="page" href="/sistema-contole/views/cadastroEspeciais/terneiras.php">Terneiras</a>
+                                                </li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li class="dropdown-item">
                                                     <a class="nav-link" href="/sistema-contole/views/cadastroEspeciais/vacas.php">Vacas</a>
                                                 </li>
                                                 <li><hr class="dropdown-divider"></li>                                                
                                                 <li class="dropdown-item">
-                                                    <a class="nav-link" href="/sistema-contole/views/cadastroEspeciais/novilhos.php">Novilhos</a>
+                                                    <a class="nav-link" href="/sistema-contole/views/cadastroEspeciais/novilhos.php">Touros</a>
+                                                </li>
+                                                <li><hr class="dropdown-divider"></li>                                                
+                                                <li class="dropdown-item">
+                                                    <a class="nav-link" href="/sistema-contole/views/cadastroEspeciais/puroOrigem.php">Puro Origem</a>
                                                 </li>
                                             </ul>
                                         </li>                                        
